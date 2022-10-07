@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
 * Студент: [Tanya MIlneva](https://up.htmlacademy.ru/htmlcss/35/user/2206893).
-* Наставник: `Неизвестно`.
+* Наставник: [Саша Сударев] (https://htmlacademy.ru/profile/id1152185).
 
 ---
 
