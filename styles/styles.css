@@ -24,6 +24,11 @@ body {
   color:#000000;
   background: #F2F2F2;
   min-height: 100%;
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
 }
 
 .page-container {
@@ -45,18 +50,17 @@ body {
 /* Header */
 .page-header {
   display: flex;
-  align-items: center;
   margin: 0 auto;
   width: 1060px;
 }
 
 .logo {
-  margin: 0 30px -6px 0;
+  margin: 0 30px 0 0;
+  z-index: 1;
 }
 
 .navigation {
   display: flex;
-  justify-content: space-between;
   width: 960px;
 }
 
@@ -67,7 +71,6 @@ body {
 /* Navigation menu */
 .navigation-list {
   display: flex;
-  align-items: center;
   width: 450px;
   padding: 0;
   margin: 0;
@@ -92,9 +95,10 @@ body {
 
 .navigation-user {
   display: flex;
-  align-items: center;
-  width: 310px;
+  max-width: 310px;
+  margin: 0;
   margin-left: auto;
+  padding: 0;
 }
 
 .navigation-user > .navigation-item:nth-child(1) {
@@ -111,15 +115,6 @@ body {
   padding: 14px 0 14px 20px;
   width: 180px;
   text-align: right;
-}
-
-/* temporary class for favorites counter*/
-.total-favorites {
-  color:#FFFFFF;
-  font-size: 10px;
-  line-height: 10px;
-  background-color: #7DB54F;
-  border-radius: 10px;
 }
 
 .navigation-link {
@@ -152,6 +147,7 @@ body {
   flex-direction: column;
   padding: 51px 371px 82px;
   align-items: center;
+  margin: -6px 0 0;
 }
 
 .welcome-logo {
@@ -190,45 +186,35 @@ body {
   margin: 0 0 25px;
 }
 
-.advantages-list {
+.advantages-list, .recomendation-list {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
 }
 
-.advantages-item:nth-child(n+2):nth-child(-n+4) {
+.advantages-item:nth-child(n+2) {
   width: 400px;
   padding: 103px 85px 121px;
   box-sizing: border-box;
 }
 
-.advantages-item:nth-child(4n+1) {
+.advantages-item:first-child {
   width: 1200px;
   display: flex;
 }
 
-.advantages-item:nth-child(5) {
-  flex-direction: row-reverse;
-}
-
-.advantages-show {
+.advantages-show, .recomendation-show {
   vertical-align: top;
 }
 
-.real-city {
+.real-city, .devil-bridge {
   padding: 92px 85px 111px;
   width: 400px;
   box-sizing: border-box;
 }
 
-.devil-bridge {
-  padding: 92px 85px 111px;
-  width: 400px;
-  box-sizing: border-box;
-}
-
-.advantages-title {
+.advantages-title, .recomendation-title {
   font-size: 24px;
   line-height: 28px;
   font-weight: 700;
@@ -241,11 +227,12 @@ body {
   margin: 0 0 90px;
 }
 
-.advantages-item-dark-blue {
+.advantages-item-dark-blue, .recomendation-item-dark-blue {
   background-color:#82B3D3;
+  color:#FFFFFF;
 }
 
-.advantages-item-light-blue {
+.advantages-item-light-blue, .recomendation-item-light-blue {
   background:rgba(130,179,211, 0.12);
 }
 
@@ -261,11 +248,7 @@ body {
   color:#333333;
 }
 
-.advantages-item-dark-blue {
-  color:#FFFFFF;
-}
-
-.advantages-description {
+.advantages-description, .recomendation-description {
   font-size: 18px;
   line-height: 21px;
   margin: 0;
@@ -273,29 +256,16 @@ body {
 
 /* Recomendation */
 
-.recomendation-list {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
-}
-
-.recomendation-item {
+.recomendation-item:nth-child(n+2) {
   width: 400px;
   padding: 182px 85px 81px;
   box-sizing: border-box;
 }
 
-.recomendation-title {
-  font-size: 24px;
-  line-height: 28px;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin: 0 0 30px;
-}
-
-.recomendation-item-light-blue {
-  background:rgba(130,179,211, 0.12);
+.recomendation-item:first-child {
+  width: 1200px;
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 .recomendation-item-light-blue > p {
@@ -306,27 +276,21 @@ body {
   color:#333333;
 }
 
-.recomendation-description {
-  font-size: 18px;
-  line-height: 21px;
-  margin: 0;
-}
-
-.recomendation-item:first-child {
+.recomendation-item:nth-child(2) {
   background-image: url(../images/advantages/accommodation.svg);
   background-repeat: no-repeat;
   background-size: 75px 72px;
   background-position: center 80px;
 }
 
-.recomendation-item:nth-child(2) {
+.recomendation-item:nth-child(3) {
   background-image: url(../images/advantages/burger.svg);
   background-repeat: no-repeat;
   background-size: 74px 70px;
   background-position: center 81px;
 }
 
-.recomendation-item:nth-child(3) {
+.recomendation-item:nth-child(4) {
   background-image: url(../images/advantages/souvenir.svg);
   background-repeat: no-repeat;
   background-size: 64px 76px;
