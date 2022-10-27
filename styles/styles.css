@@ -13,12 +13,30 @@
   font-display: swap;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   font-family: "PT Sans", "Arial", sans-serif;
   font-size: 22px;
   line-height: 26px;
   color:#000000;
+  background: #F2F2F2;
+  min-height: 100%;
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.page-container {
   background: #FFFFFF;
+  margin: 0 auto;
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
 }
 
 .button {
@@ -30,13 +48,73 @@ body {
 }
 
 /* Header */
+.page-header {
+  display: flex;
+  margin: 0 auto;
+  width: 1060px;
+}
 
-.total-favorites {
-  color:#FFFFFF;
-  font-size: 10px;
-  line-height: 10px;
-  background-color: #7DB54F;
-  border-radius: 10px;
+.logo {
+  margin: 0 30px 0 0;
+  z-index: 1;
+}
+
+.navigation {
+  display: flex;
+  width: 960px;
+}
+
+.navigation-item {
+  box-sizing: border-box;
+}
+
+/* Navigation menu */
+.navigation-list {
+  display: flex;
+  width: 450px;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation-list > .navigation-item {
+  padding: 20px 16px;
+}
+.navigation-list > .navigation-item:nth-child(1) {
+  width: 100px;
+}
+
+.navigation-list > .navigation-item:nth-child(2) {
+  width: 114px;
+}
+
+.navigation-list > .navigation-item:nth-child(3) {
+  width: 125px;
+}
+
+/* User menu */
+
+.navigation-user {
+  display: flex;
+  max-width: 310px;
+  margin: 0;
+  margin-left: auto;
+  padding: 0;
+}
+
+.navigation-user > .navigation-item:nth-child(1) {
+  padding: 22px 12px;
+  width: 44px;
+}
+
+.navigation-user > .navigation-item:nth-child(2) {
+  padding: 22px 12px;
+  width: 44px;
+}
+
+.navigation-user > .navigation-item:nth-child(3) {
+  padding: 14px 0 14px 20px;
+  width: 180px;
+  text-align: right;
 }
 
 .navigation-link {
@@ -50,7 +128,13 @@ body {
 
 .navigation-button {
   font-size: 16px;
+  line-height: 20px;
   background-color: #756157;
+}
+
+/* Making sticky footer */
+.main-index {
+  flex-grow: 1;
 }
 
 /* Hero */
@@ -59,36 +143,96 @@ body {
   background-repeat: no-repeat;
   background-color: #5685b3;
   background-size: 100% auto;
+  display: flex;
+  flex-direction: column;
+  padding: 51px 371px 82px;
+  align-items: center;
+  margin: -6px 0 0;
+}
+
+.welcome-logo {
+  margin-bottom: 11px;
+}
+
+.gorgeous-logo {
+  margin-bottom: 54px;
 }
 
 /* Advantages */
 .advantages {
   text-align: center;
+  padding-top: 69px;
 }
 
-h2.advantages-title {
+.drop-line-white {
+  width: 60px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 0 auto 30px;
+}
+
+.drop-line-dark {
+  width: 60px;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.3);
+  margin: 0 auto 30px;
+}
+
+.advantages-title-main {
   font-size: 30px;
   line-height: 36px;
   font-weight: 700;
   text-transform: uppercase;
+  margin: 0 0 25px;
 }
 
-h3.advantages-title {
+.advantages-list, .recomendation-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.advantages-item:nth-child(n+2) {
+  width: 400px;
+  padding: 103px 85px 121px;
+  box-sizing: border-box;
+}
+
+.advantages-item:first-child {
+  width: 1200px;
+  display: flex;
+}
+
+.advantages-show, .recomendation-show {
+  vertical-align: top;
+}
+
+.real-city, .devil-bridge {
+  padding: 92px 85px 111px;
+  width: 400px;
+  box-sizing: border-box;
+}
+
+.advantages-title, .recomendation-title {
   font-size: 24px;
   line-height: 28px;
   font-weight: 700;
   text-transform: uppercase;
+  margin: 0 0 30px;
 }
 
 .advantages-reasons {
   color:#333333;
+  margin: 0 0 90px;
 }
 
-.advantages-item-dark-blue {
+.advantages-item-dark-blue, .recomendation-item-dark-blue {
   background-color:#82B3D3;
+  color:#FFFFFF;
 }
 
-.advantages-item-light-blue {
+.advantages-item-light-blue, .recomendation-item-light-blue {
   background:rgba(130,179,211, 0.12);
 }
 
@@ -104,24 +248,24 @@ h3.advantages-title {
   color:#333333;
 }
 
-.advantages-item-dark-blue {
-  color:#FFFFFF;
-}
-
-.advantages-description {
+.advantages-description, .recomendation-description {
   font-size: 18px;
   line-height: 21px;
+  margin: 0;
 }
 
-h3.recomendation-title {
-  font-size: 24px;
-  line-height: 28px;
-  font-weight: 700;
-  text-transform: uppercase;
+/* Recomendation */
+
+.recomendation-item:nth-child(n+2) {
+  width: 400px;
+  padding: 182px 85px 81px;
+  box-sizing: border-box;
 }
 
-.recomendation-item-light-blue {
-  background:rgba(130,179,211, 0.12);
+.recomendation-item:first-child {
+  width: 1200px;
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 .recomendation-item-light-blue > p {
@@ -132,27 +276,25 @@ h3.recomendation-title {
   color:#333333;
 }
 
-.recomendation-description {
-  font-size: 18px;
-  line-height: 21px;
-}
-
-.recomendation-item:first-child {
+.recomendation-item:nth-child(2) {
   background-image: url(../images/advantages/accommodation.svg);
   background-repeat: no-repeat;
-  background-size: 84px 84px;
-}
-
-.recomendation-item:nth-child(2) {
-  background-image: url(../images/advantages/burger.svg);
-  background-repeat: no-repeat;
-  background-size: 84px 84px;
+  background-size: 75px 72px;
+  background-position: center 80px;
 }
 
 .recomendation-item:nth-child(3) {
+  background-image: url(../images/advantages/burger.svg);
+  background-repeat: no-repeat;
+  background-size: 74px 70px;
+  background-position: center 81px;
+}
+
+.recomendation-item:nth-child(4) {
   background-image: url(../images/advantages/souvenir.svg);
   background-repeat: no-repeat;
-  background-size: 84px 84px;
+  background-size: 64px 76px;
+  background-position: center 78px;
 }
 
 /* hotel searching  */
@@ -202,7 +344,41 @@ h3.recomendation-title {
 
 /* Footer */
 .page-footer {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  margin: 40px 70px 30px;
+}
+
+.footer-social {
+  width: 144px;
+  margin: 5px 0 5px;
+}
+
+.footer-social-list {
+  display: flex;
+  padding: 0;
+}
+
+.footer-social-item {
+  width: 48px;
+  box-sizing: border-box;
+}
+
+.footer-social-item:nth-child(1) {
+  padding: 13px 12px;
+}
+
+.footer-social-item:nth-child(2) {
+  padding: 12px 15px;
+}
+
+.footer-social-item:nth-child(3) {
+  padding: 12px 13px;
+}
+
+.footer-phone {
+  width: 331px;
+  margin: 5px auto 5px;
 }
 
 a.footer-phone {
@@ -210,4 +386,10 @@ a.footer-phone {
   line-height: 40px;
   color:#000000;
   text-decoration: none;
+}
+
+.footer-made-by {
+  width: 157px;
+  text-align: right;
+  margin: 9px 0 9px;
 }
