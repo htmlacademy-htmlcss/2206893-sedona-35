@@ -25,6 +25,7 @@ body {
   background: #F2F2F2;
   min-height: 100%;
   margin: 0;
+  padding: 0;
 }
 
 .visually-hidden {
@@ -53,6 +54,7 @@ body {
   color:#FFFFFF;
   text-transform: uppercase;
   text-decoration: none;
+  border: none;
 }
 
 /* Header */
@@ -202,11 +204,11 @@ body {
 }
 
 .advantages-list, .recomendation-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   margin: 0;
   padding: 0;
   list-style-type: none;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .advantages-item, .recomendation-item {
@@ -226,6 +228,7 @@ body {
   color:#FFFFFF;
   margin: 0;
   padding: 0;
+  grid-column: span 3;
 }
 
 .advantages-show, .recomendation-show {
@@ -274,10 +277,6 @@ body {
 .recomendation-item:nth-child(n+2) {
   width: 400px;
   padding: 182px 85px 81px;
-}
-
-.recomendation-item-light-blue {
-  flex-direction: row-reverse;
 }
 
 .recomendation-item-light-blue > p {
@@ -366,12 +365,26 @@ body {
   margin: 0 0 54px;
 }
 
+.newsletter-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+/* указываю дополнительно font-family, иначе браузер сбрасывает свойство шрифта для формы от body на дефолтное, отличающееся от заданного по макету*/
+.field {
+  border: none;
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-size: 18px;
+  padding: 12px 20px;
+  border-radius: 4px 0 0 4px;
+}
+
 .newsletter-button {
   background-color:#82B3D3;
-  border: none;
   text-align: center;
+  font-family: "PT Sans", "Arial", sans-serif;
   margin: 0;
   padding: 8px 50px;
+  border-radius: 0 4px 4px 0;
 }
 
 /* Footer */
