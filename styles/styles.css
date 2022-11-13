@@ -265,7 +265,7 @@ body {
 
 .advantages-item:nth-child(n+2) {
   width: 400px;
-  padding: 103px 85px 121px;
+  padding: 103px 80px 110px;
 }
 
 .advantages-item-dark-blue, .recomendation-item-dark-blue {
@@ -283,7 +283,7 @@ body {
 }
 
 .real-city, .devil-bridge {
-  padding: 92px 85px 111px;
+  padding: 92px 80px 100px;
   width: 400px;
   box-sizing: border-box;
   position: relative;
@@ -346,7 +346,7 @@ body {
 
 .recomendation-item:nth-child(n+2) {
   width: 400px;
-  padding: 182px 85px 81px;
+  padding: 182px 80px 70px;
 }
 
 .recomendation-item-light-blue > p {
@@ -562,7 +562,7 @@ a:active .footer-icon {
 }
 
 .footer-phone {
-  width: 331px;
+  width: 335px;
   padding: 0;
   margin: 0 auto;
 }
