@@ -48,6 +48,7 @@ body {
 }
 
 .button {
+  display: inline-block;
   font-size: 20px;
   line-height: 36px;
   font-weight: 700;
@@ -55,6 +56,8 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   border: none;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
 /* Header */
@@ -99,6 +102,19 @@ body {
 .navigation-list > .navigation-item:nth-child(3) {
   width: 125px;
 }
+.navigation-link-current {
+  position: relative;
+}
+
+.navigation-link-current::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 16px;
+  left: 16px;
+  height: 2px;
+  background-color: #756257;
+}
 
 .navigation-link {
   font-size: 20px;
@@ -127,11 +143,38 @@ body {
   padding: 22px 12px;
   min-width: 44px;
   min-height: 64px;
+  text-decoration: none;
+}
+
+.navigation-link-search {
+  background-image: url(../images/logo/logo-search.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.navigation-link-favorite {
+  position: relative;
+  background-image: url(../images/logo/logo-favor.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .navigation-user > .navigation-item:nth-child(3) {
   padding: 14px 0 14px 20px;
   text-align: right;
+}
+
+.total-favorites {
+  color:#FFFFFF;
+  font-size: 10px;
+  line-height: 20px;
+  background-color: #7DB54F;
+  border-radius: 10px;
+  position: absolute;
+  text-align: center;
+  top: 11px;
+  left: 20px;
+  width: 20px;
 }
 
 .navigation-button {
@@ -140,7 +183,24 @@ body {
   background-color: #756157;
   display: block;
   padding: 8px 34px;
-  border-radius: 4px;
+}
+
+.navigation-button:hover {
+  background-color: #615048;
+}
+
+.navigation-button:focus-visible {
+  background-color: #615048;
+}
+
+.navigation-button:active {
+  background-color: #756157;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.navigation-button:disabled {
+  background-color: #E5E5E5;
+  color: #FFFFFF;
 }
 
 /* Making sticky footer */
@@ -176,20 +236,6 @@ body {
   margin: 0;
 }
 
-.drop-line-white {
-  width: 60px;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.3);
-  margin: 0 auto 30px;
-}
-
-.drop-line-dark {
-  width: 60px;
-  height: 2px;
-  background: rgba(0, 0, 0, 0.3);
-  margin: 0 auto 30px;
-}
-
 .advantages-title-main {
   font-size: 30px;
   line-height: 36px;
@@ -214,6 +260,7 @@ body {
 .advantages-item, .recomendation-item {
   box-sizing: border-box;
   min-height: 384px;
+  position: relative;
 }
 
 .advantages-item:nth-child(n+2) {
@@ -239,6 +286,7 @@ body {
   padding: 92px 85px 111px;
   width: 400px;
   box-sizing: border-box;
+  position: relative;
 }
 
 .advantages-title, .recomendation-title {
@@ -246,7 +294,29 @@ body {
   line-height: 28px;
   font-weight: 700;
   text-transform: uppercase;
-  margin: 0 0 30px;
+  margin: 0 0 62px;
+}
+
+.drop-white::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 2px;
+  top: 178px;
+  left: 170px;
+  background: rgba(255, 255, 255, 0.3);
+
+}
+
+.drop-dark::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 2px;
+  top: 189px;
+  left: 170px;
+  background: rgba(0, 0, 0, 0.3);
+
 }
 
 .advantages-item-light-blue, .recomendation-item-light-blue {
@@ -334,8 +404,25 @@ body {
   background-color:#756157;
   display: block;
   padding: 8px 50px;
-  border-radius: 4px;
   margin: 0 auto;
+}
+
+.searching-button:hover {
+  background-color: #615048;
+}
+
+.searching-button:focus-visible {
+  background-color: #615048;
+}
+
+.searching-button:active {
+  background-color: ##756157;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.searching-button:disabled {
+  background-color:#E5E5E5;
+  color: #FFFFFF;
 }
 
 /* Subscribe */
@@ -369,7 +456,7 @@ body {
   display: grid;
   grid-template-columns: 1fr auto;
 }
-/* указываю дополнительно font-family, иначе браузер сбрасывает свойство шрифта для формы от body на дефолтное, отличающееся от заданного по макету*/
+
 .field {
   border: none;
   font-family: "PT Sans", "Arial", sans-serif;
@@ -387,6 +474,24 @@ body {
   border-radius: 0 4px 4px 0;
 }
 
+.newsletter-button:hover {
+  background-color:#68A2CA;
+}
+
+.newsletter-button:focus-visible {
+  background-color:#68A2CA;
+}
+
+.newsletter-button:active {
+  background-color:#82B3D3;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.newsletter-button:disabled {
+  background-color:#E5E5E5;
+  color: #FFFFFF;
+}
+
 /* Footer */
 .page-footer {
   display: flex;
@@ -395,8 +500,30 @@ body {
   margin: 0;
 }
 
+.footer-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  fill: #83B3D3;
+}
+
+a:hover .footer-icon {
+  fill: #68A2CA;
+}
+
+a:focus-visible .footer-icon {
+  fill: #68A2CA;
+}
+
+a:active .footer-icon {
+  fill: rgba(104, 162, 202, 0.3);
+}
+
 .footer-social {
-  width: 142px;
+  width: 145px;
   padding: 0;
   margin: 0;
 }
@@ -413,6 +540,25 @@ body {
   width: 48px;
   height: 40px;
   box-sizing: border-box;
+  position: relative;
+}
+
+.button-vk {
+  display: block;
+  min-height: 14px;
+  padding: 13px 12px;
+}
+
+.button-telegram {
+  display: block;
+  min-height: 16px;
+  padding: 12px 15px;
+}
+
+.button-youtube {
+  display: block;
+  min-height: 16px;
+  padding: 12px 13px;
 }
 
 .footer-phone {
@@ -428,9 +574,44 @@ a.footer-phone {
   text-decoration: none;
 }
 
+a.footer-phone:hover {
+  color:#756157;
+}
+
+a.footer-phone:focus-visible {
+  color:#756157;
+}
+
+a.footer-phone:active {
+  color:rgba(117, 97, 87, 0.3);
+}
+
 .footer-made-by {
   width: 115px;
   text-align: right;
   padding: 0;
   margin: 0;
+  position: relative;
+}
+
+.htmlacademy-link {
+  display: block;
+  min-width: 120px;
+  min-height: 40px;
+}
+
+.htmlacademy-link .footer-icon {
+  fill: #000000;
+}
+
+.htmlacademy-link:hover .footer-icon {
+  fill: #756157;
+}
+
+.htmlacademy-link:focus-visible .footer-icon {
+  fill: #756157;
+}
+
+.htmlacademy-link:active .footer-icon {
+  fill: rgba(117, 97, 87, 0.3);
 }
