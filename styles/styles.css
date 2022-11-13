@@ -294,6 +294,9 @@ body {
   line-height: 28px;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.advantages-title {
   margin: 0 0 62px;
 }
 
@@ -303,7 +306,8 @@ body {
   width: 60px;
   height: 2px;
   top: 178px;
-  left: 170px;
+  left: 50%;
+  margin-left: -30px;
   background: rgba(255, 255, 255, 0.3);
 
 }
@@ -314,7 +318,8 @@ body {
   width: 60px;
   height: 2px;
   top: 189px;
-  left: 170px;
+  left: 50%;
+  margin-left: -30px;
   background: rgba(0, 0, 0, 0.3);
 
 }
@@ -343,6 +348,10 @@ body {
 }
 
 /* Recomendation */
+
+.recomendation-title {
+  margin: 0 0 30px;
+}
 
 .recomendation-item:nth-child(n+2) {
   width: 400px;
@@ -500,34 +509,6 @@ body {
   margin: 0;
 }
 
-.footer-icon {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  fill: #83B3D3;
-}
-
-a:hover .footer-icon {
-  fill: #68A2CA;
-}
-
-a:focus-visible .footer-icon {
-  fill: #68A2CA;
-}
-
-a:active .footer-icon {
-  fill: rgba(104, 162, 202, 0.3);
-}
-
-.footer-social {
-  width: 145px;
-  padding: 0;
-  margin: 0;
-}
-
 .footer-social-list {
   display: flex;
   flex-wrap: wrap;
@@ -559,6 +540,34 @@ a:active .footer-icon {
   display: block;
   min-height: 16px;
   padding: 12px 13px;
+}
+
+.footer-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  fill: #83B3D3;
+}
+
+a:hover .footer-icon {
+  fill: #68A2CA;
+}
+
+a:focus-visible .footer-icon {
+  fill: #68A2CA;
+}
+
+a:active .footer-icon {
+  fill: rgba(104, 162, 202, 0.3);
+}
+
+.footer-social {
+  width: 145px;
+  padding: 0;
+  margin: 0;
 }
 
 .footer-phone {
