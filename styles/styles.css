@@ -349,7 +349,11 @@ body {
 
 /* Recomendation */
 
-.recomendation-title {
+.recomendation-title:first-child {
+  margin: 0 0 62px;
+}
+
+.recomendation-title:nth-child(n+2) {
   margin: 0 0 30px;
 }
 
