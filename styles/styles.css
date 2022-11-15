@@ -124,6 +124,7 @@ body {
   text-decoration: none;
   display: block;
   padding: 20px 16px;
+  cursor: pointer;
 }
 
 /* User menu */
@@ -144,6 +145,7 @@ body {
   min-width: 44px;
   min-height: 64px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .navigation-link-search {
@@ -242,6 +244,7 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   margin: 0 0 25px;
+  padding:0 280px;
 }
 
 .advantages-reasons {
@@ -294,9 +297,14 @@ body {
   line-height: 28px;
   font-weight: 700;
   text-transform: uppercase;
+  padding:0 30px;
+  margin: 0 0 30px;
+  position: relative;
 }
 
-.advantages-title {
+.advantages-title.drop-dark,
+.advantages-title.drop-white,
+.recomendation-title.drop-white {
   margin: 0 0 62px;
 }
 
@@ -305,9 +313,9 @@ body {
   position: absolute;
   width: 60px;
   height: 2px;
-  top: 178px;
+  bottom: -30px;
   left: 50%;
-  margin-left: -30px;
+  transform: translate(-50%, 50%);
   background: rgba(255, 255, 255, 0.3);
 
 }
@@ -317,9 +325,9 @@ body {
   position: absolute;
   width: 60px;
   height: 2px;
-  top: 189px;
+  bottom: -30px;
   left: 50%;
-  margin-left: -30px;
+  transform: translate(-50%, 50%);
   background: rgba(0, 0, 0, 0.3);
 
 }
@@ -349,14 +357,6 @@ body {
 
 /* Recomendation */
 
-.recomendation-title:first-child {
-  margin: 0 0 62px;
-}
-
-.recomendation-title:nth-child(n+2) {
-  margin: 0 0 30px;
-}
-
 .recomendation-item:nth-child(n+2) {
   width: 400px;
   padding: 182px 80px 70px;
@@ -369,6 +369,11 @@ body {
 .recomendation-item-white > p {
   color:#333333;
 }
+
+.recomendation-item-dark-blue {
+  flex-direction: row-reverse;
+}
+
 
 .recomendation-item:nth-child(2) {
   background-image: url(../images/advantages/accommodation.svg);
@@ -411,6 +416,7 @@ body {
 .hotel-searching-text {
   color:#333333;
   margin: 0 auto 54px;
+  padding: 0 300px;
 }
 
 .searching-button {
@@ -429,7 +435,7 @@ body {
 }
 
 .searching-button:active {
-  background-color: ##756157;
+  background-color: #756157;
   color: rgba(255, 255, 255, 0.3);
 }
 
@@ -474,8 +480,16 @@ body {
   border: none;
   font-family: "PT Sans", "Arial", sans-serif;
   font-size: 18px;
+  line-height: 24px;
   padding: 12px 20px;
   border-radius: 4px 0 0 4px;
+  margin: 0;
+  background-color: #ffffff;
+}
+
+.field::placeholder {
+  color: #000000;
+  opacity: 0.6;
 }
 
 .newsletter-button {
@@ -527,21 +541,22 @@ body {
   box-sizing: border-box;
   position: relative;
 }
+.button-social {
+  display: block;
+  cursor: pointer;
+}
 
 .button-vk {
-  display: block;
   min-height: 14px;
   padding: 13px 12px;
 }
 
 .button-telegram {
-  display: block;
   min-height: 16px;
   padding: 12px 15px;
 }
 
 .button-youtube {
-  display: block;
   min-height: 16px;
   padding: 12px 13px;
 }
@@ -578,6 +593,7 @@ a:active .footer-icon {
   width: 335px;
   padding: 0;
   margin: 0 auto;
+  cursor: pointer;
 }
 
 a.footer-phone {
@@ -611,6 +627,7 @@ a.footer-phone:active {
   display: block;
   min-width: 120px;
   min-height: 40px;
+  cursor: pointer;
 }
 
 .htmlacademy-link .footer-icon {
@@ -627,4 +644,291 @@ a.footer-phone:active {
 
 .htmlacademy-link:active .footer-icon {
   fill: rgba(117, 97, 87, 0.3);
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(242, 242, 242, 0.8);
+}
+
+.modal {
+  position: relative;
+  margin: auto;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 30px;
+}
+
+.modal-search {
+  box-sizing: border-box;
+  width: 717px;
+  padding: 64px 70px;
+}
+
+.modal-close-button {
+  position: absolute;
+  padding: 0;
+  top: 64px;
+  right: 52px;
+  width: 52px;
+  height: 52px;
+  background-color: #F2F2F2;
+  border-radius: 50%;
+  border: none;
+  background-image: url("../images/cross.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.modal-title {
+  margin: 0;
+  margin-bottom: 64px;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.modal-container-close {
+  display: none;
+}
+
+.searching-form {
+  display: grid;
+  grid-template-columns: 247px 242px;
+  grid-gap: 48px 88px;
+}
+.searching-form * {
+  box-sizing: border-box;
+}
+.form-label {
+  margin-right: auto;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.field-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.searching-form-date,
+.searching-submit {
+  grid-column: 1 / -1;
+  position: relative;
+}
+
+.searching-form-adults,
+.searching-form-child {
+  position: relative;
+}
+
+.searching-form-date .field {
+  width: 440px;
+  background-color: #F2F2F2;
+  border-radius: 4px;
+  border: none;
+  font-weight: 700;
+  background-image: url("../images/date.svg");
+  background-repeat: no-repeat;
+  background-position: 400px center;
+  background-size: 20px;
+  cursor: pointer;
+}
+
+.check-date-error {
+  color: #FF5757;
+  position: absolute;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  top: 52px;
+  left: 157px;
+}
+
+.check-date-correct {
+  color: #333333;
+  position: absolute;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  top: 52px;
+  left: 157px;
+  display: none;
+}
+
+.date-error {
+  display: none;
+}
+
+.date-available {
+  display: block;
+}
+
+.searching-form-adults .field,
+.searching-form-child .field {
+  width: 110px;
+  background-color: #F2F2F2;
+  border-radius: 4px;
+  border: none;
+  color: #000000;
+  text-align: center;
+  font-weight: 700;
+}
+
+.number-minus {
+  position: absolute;
+	right: 71px;
+  top: 0;
+	width: 40px;
+  height: 48px;
+	padding: 0;
+	text-align: center;
+	border: none;
+}
+
+.number-plus {
+  position: absolute;
+	right: 0;
+  top: 0;
+	width: 40px;
+  height: 48px;
+	padding: 0;
+	text-align: center;
+	border: none;
+}
+
+.number-minus::after {
+  position: absolute;
+  top: 23px;
+  right: 14px;
+  width: 14px;
+  height: 2px;
+  background-color: rgba(117, 97, 87, 0.3);;
+  content: "";
+}
+
+.number-plus::before {
+  position: absolute;
+  top: 23px;
+  right: 13px;
+  width: 14px;
+  height: 2px;
+  background-color: rgba(117, 97, 87, 0.3);;
+  content: "";
+  transform: rotate(90deg);
+}
+
+.number-plus::after {
+  position: absolute;
+  top: 23px;
+  right: 13px;
+  width: 14px;
+  height: 2px;
+  background-color: rgba(117, 97, 87, 0.3);;
+  content: "";
+}
+
+.searching-form-adults:hover .number-minus,
+.searching-form-adults:hover .number-plus,
+.searching-form-child:hover .number-minus,
+.searching-form-child:hover .number-plus {
+  border-color: #000000;
+  cursor: pointer;
+}
+
+.searching-form-adults:focus-visible .number-minus,
+.searching-form-adults:focus-visible .number-plus,
+.searching-form-child:focus-visible .number-minus,
+.searching-form-child:focus-visible .number-plus {
+  border-color: #756157;
+}
+
+.field-group input[type="number"]::-webkit-outer-spin-button,
+.field-group input[type="number"]::-webkit-inner-spin-button {
+	display: none;
+}
+
+.tooltip {
+  position: absolute;
+  margin-top: -1px;
+  margin-left: 10px;
+  width: 26px;
+  height: 26px;
+}
+
+.tooltip-toggle {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+.tooltip-icon {
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  display: block;
+}
+
+.tooltip-toggle:hover .tooltip-icon {
+  color: #ffffff;
+}
+
+.tooltip-text {
+  background: #333333;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 16px;
+  box-sizing: border-box;
+  line-height: 20px;
+  font-weight: 400;
+  text-transform: none;
+  padding: 15px 18px 18px 22px;
+  display: none;
+  width: 256px;
+  position: absolute;
+  margin-top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.tooltip-text:after {
+  content:'';
+  background-image: url("../images/tooltip-arrow.svg");
+  width: 19px;
+  height: 9px;
+  position:absolute;
+  bottom: 100%;
+  left:0;
+  right:0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tooltip-toggle:hover + .tooltip-text,
+.tooltip-toggle:focus + .tooltip-text {
+  display: block;
+}
+
+.searching-submit {
+  background-color:#82B3D3;
+  text-align: center;
+  font-family: "PT Sans", "Arial", sans-serif;
+  margin: 0;
+  padding: 18px 0;
+  line-height: 24px;
 }
