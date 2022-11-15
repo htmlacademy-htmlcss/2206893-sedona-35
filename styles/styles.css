@@ -299,6 +299,7 @@ body {
   text-transform: uppercase;
   padding:0 30px;
   margin: 0 0 30px;
+  position: relative;
 }
 
 .advantages-title.drop-dark,
@@ -312,9 +313,9 @@ body {
   position: absolute;
   width: 60px;
   height: 2px;
-  top: 178px;
+  bottom: -30px;
   left: 50%;
-  margin-left: -30px;
+  transform: translate(-50%, 50%);
   background: rgba(255, 255, 255, 0.3);
 
 }
@@ -324,9 +325,9 @@ body {
   position: absolute;
   width: 60px;
   height: 2px;
-  top: 189px;
+  bottom: -30px;
   left: 50%;
-  margin-left: -30px;
+  transform: translate(-50%, 50%);
   background: rgba(0, 0, 0, 0.3);
 
 }
