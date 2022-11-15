@@ -695,9 +695,9 @@ a.footer-phone:active {
   text-transform: uppercase;
 }
 
-/* .modal-container-close {
+.modal-container-close {
   display: none;
-} */
+}
 
 .searching-form {
   display: grid;
