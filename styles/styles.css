@@ -135,6 +135,14 @@ img {
   cursor: pointer;
 }
 
+.navigation-link:hover {
+  color: #756157;
+}
+
+.navigation-link:active {
+  color: rgba(117, 97, 87, 0.3);
+}
+
 /* User menu */
 .navigation-user {
   display: flex;
@@ -156,17 +164,8 @@ img {
   cursor: pointer;
 }
 
-.navigation-link-search {
-  background-image: url("../images/logo/logo-search.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
 .navigation-link-favorite {
   position: relative;
-  background-image: url("../images/logo/logo-favor.svg");
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .navigation-user > .navigation-item:nth-child(3) {
@@ -211,6 +210,18 @@ img {
 .navigation-button:disabled {
   background-color: #e5e5e5;
   color: #ffffff;
+}
+
+.navigation-item .navigation-icon {
+  fill: #000000;
+}
+
+.navigation-item:hover .navigation-icon {
+  fill: #756157;
+}
+
+.navigation-item:focus-visible .navigation-icon {
+  fill: #756157;
 }
 
 /* Making sticky footer */
@@ -950,4 +961,17 @@ a.footer-phone:active {
   font-family: "PT Sans", "Arial", sans-serif;
   line-height: 24px;
   background-color: #82b3d3;
+}
+
+.searching-submit:hover {
+  background-color: #68a2ca;
+}
+
+.searching-submit:focus-visible {
+  background-color: #68a2ca;
+}
+
+.searching-submit:active {
+  color: rgba(255, 255, 255, 0.3);
+  background-color: #68a2ca;
 }
